@@ -1,0 +1,48 @@
+body {
+  margin: auto;
+}
+
+.cont {
+  width: 1000px;
+  height: 600px;
+  margin: auto;
+  background-color: rgba(241, 231, 98, 0.61);
+}
+
+.geral {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  float: left;
+}
+
+.fa {
+  width: 800px;
+  height: 800px;
+  margin: auto;
+  float: left;
+}
+
+.fa h1 {
+  font-size: 36px;
+  text-align: center;
+  float: left;
+}
+.formulario {
+  width: 650px;
+  height: 600px;
+  margin: auto;
+  float: left;
+  margin-bottom: 30px;
+}
+
+.select {
+  width: 300px;
+  margin: auto;
+  float: left;
+}
+.elemen {
+  width: 150px;
+  float: left;
+  margin: auto;
+}
