@@ -4,7 +4,7 @@ require_once "conf/Conexao.class.php";
 require_once "conf/Crud.class.php";
 require_once "autoload.php";
 //include_once "conf/default.inc.php";
-$title = "Lista de Usuários";
+$title = "Lista de Cidades";
 $consulta = isset($_POST['consulta']) ? $_POST['consulta'] : "";
 
 ?>
@@ -24,7 +24,7 @@ $consulta = isset($_POST['consulta']) ? $_POST['consulta'] : "";
 
 <body>
     <br>
-    <a href="cad.php"><button>Novo</button></a>
+    <a href="cad_cidade.php"><button>Novo</button></a>
     <br><br>
     <form method="post">
         <input type="text" name="consulta" id="consulta" value="<? echo $consulta; ?>">
@@ -35,9 +35,9 @@ $consulta = isset($_POST['consulta']) ? $_POST['consulta'] : "";
     <table border="1">
         <tr>
             <th>Código</th>
-            <th>Usuario</th>
-            <th>Senha</th>
-            <th>Id permissao</th>
+            <th>Nome</th>
+            <th>Id Estado</th>
+            <th>População</th>
 
             <th>Detalhes</th>
             <th>Alterar</th>
@@ -45,22 +45,22 @@ $consulta = isset($_POST['consulta']) ? $_POST['consulta'] : "";
         </tr>
         <?php
         $pdo = Conexao::getInstance();
-        $consulta = $pdo->query("SELECT * FROM usuario
-                             WHERE user
+        $consulta = $pdo->query("SELECT * FROM cidade
+                             WHERE nome
                              LIKE '$consulta%'");
         while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
-            $usuario = new Usuario;
-            $usuario->buildFromArray($linha);
+            $cidade = new Cidade;
+            $cidade->buildFromArray($linha);
         ?>
             <tr>
-                <td><?php echo $usuario->getCodigo(); ?></td>
-                <td><?php echo $usuario->getUser(); ?></td>
-                <td><?php echo $usuario->getSenha(); ?></td>
-                <td><?php echo $usuario->getId_permissao(); ?></td>
+                <td><?php echo $cidade->getCodigo(); ?></td>
+                <td><?php echo $cidade->getNome(); ?></td>
+                <td><?php echo $cidade->getId_state(); ?></td>
+                <td><?php echo $cidade->getPopulacao(); ?></td>
 
-                <td><a href='show.php?id=<?php echo $usuario->getCodigo(); ?>'> <img class="icon" src="img/show.png" alt=""> </a></td>
-                <td><a href='cad.php?acao=editar&codigo=<?php echo $usuario->getCodigo(); ?>'><img class="icon" src="img/edit.png" alt=""></a></td>
-                <td><a href="javascript:excluirRegistro('acao.php?acao=excluir&codigo=<?php echo $usuario->getCodigo(); ?>')"><img class="icon" src="img/delete.png" alt=""></a></td>
+                <td><a href='show_cidade.php?id=<?php echo $cidade->getCodigo(); ?>'> <img class="icon" src="img/show.png" alt=""> </a></td>
+                <td><a href='cad_cidade.php?acao=editar&codigo=<?php echo $cidade->getCodigo(); ?>'><img class="icon" src="img/edit.png" alt=""></a></td>
+                <td><a href="javascript:excluirRegistro('acao.php?acao=excluir&codigo=<?php echo $cidade->getCodigo(); ?>')"><img class="icon" src="img/delete.png" alt=""></a></td>
             </tr>
         <?php } ?>
     </table>
