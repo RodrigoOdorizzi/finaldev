@@ -60,7 +60,7 @@ $consulta = isset($_POST['consulta']) ? $_POST['consulta'] : "";
 
                 <td><a href='show_cidade.php?id=<?php echo $cidade->getCodigo(); ?>'> <img class="icon" src="img/show.png" alt=""> </a></td>
                 <td><a href='cad_cidade.php?acao=editar&codigo=<?php echo $cidade->getCodigo(); ?>'><img class="icon" src="img/edit.png" alt=""></a></td>
-                <td><a href="javascript:excluirRegistro('acao.php?acao=excluir&codigo=<?php echo $cidade->getCodigo(); ?>')"><img class="icon" src="img/delete.png" alt=""></a></td>
+                <td><a href="javascript:excluirRegistro('acao_cidade.php?acao=excluir&codigo=<?php echo $cidade->getCodigo(); ?>')"><img class="icon" src="img/delete.png" alt=""></a></td>
             </tr>
         <?php } ?>
     </table>

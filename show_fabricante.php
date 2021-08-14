@@ -2,9 +2,9 @@
 <?php
 //include_once "conf/default.inc.php";
 require_once "conf/Conexao.class.php";
-require_once "acao_cidade.php";
+require_once "acao_doenca.php";
 
-$title = "Lista de Clientes";
+$title = "Lista de doencas";
 $id = isset($_GET['id']) ? $_GET['id'] : "1";
 ?>
 <html lang="pt-br">
@@ -15,12 +15,12 @@ $id = isset($_GET['id']) ? $_GET['id'] : "1";
 </head>
 
 <body>
-    <a href="index_cidade.php"><button>Listar</button></a>
-    <a href="cad_cidade.php"><button>Novo</button></a>
-    <a href="cad_cidade.php?acao=editar&codigo=<?php echo $id; ?>"><button>Alterar</button></a>
+    <a href="index_doenca.php"><button>Listar</button></a>
+    <a href="cad_doenca.php"><button>Novo</button></a>
+    <a href="cad_doenca.php?acao=editar&codigo=<?php echo $id; ?>"><button>Alterar</button></a>
     </br></br>
     <?php
-    echo show_cidade($id);
+    echo show_doenca($id);
     ?>
 </body>
 

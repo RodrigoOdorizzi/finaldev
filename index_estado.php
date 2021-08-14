@@ -4,7 +4,7 @@ require_once "conf/Conexao.class.php";
 require_once "conf/Crud.class.php";
 require_once "autoload.php";
 //include_once "conf/default.inc.php";
-$title = "Lista de Doenças";
+$title = "Lista de Estados";
 $consulta = isset($_POST['consulta']) ? $_POST['consulta'] : "";
 
 ?>
@@ -24,7 +24,7 @@ $consulta = isset($_POST['consulta']) ? $_POST['consulta'] : "";
 
 <body>
     <br>
-    <a href="cad_doenca.php"><button>Novo</button></a>
+    <a href="cad_estado.php"><button>Novo</button></a>
     <br><br>
     <form method="post">
         <input type="text" name="consulta" id="consulta" value="<? echo $consulta; ?>">
@@ -36,6 +36,7 @@ $consulta = isset($_POST['consulta']) ? $_POST['consulta'] : "";
         <tr>
             <th>Código</th>
             <th>Nome</th>
+            <th>UF</th>
 
             <th>Detalhes</th>
             <th>Alterar</th>
@@ -43,20 +44,21 @@ $consulta = isset($_POST['consulta']) ? $_POST['consulta'] : "";
         </tr>
         <?php
         $pdo = Conexao::getInstance();
-        $consulta = $pdo->query("SELECT * FROM doenca
+        $consulta = $pdo->query("SELECT * FROM estado
                              WHERE nome
                              LIKE '$consulta%'");
         while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
-            $doenca = new Doenca;
-            $doenca->buildFromArray($linha);
+            $estado = new Estado;
+            $estado->buildFromArray($linha);
         ?>
             <tr>
-                <td><?php echo $doenca->getCodigo(); ?></td>
-                <td><?php echo $doenca->getNome(); ?></td>
+                <td><?php echo $estado->getCodigo(); ?></td>
+                <td><?php echo $estado->getNome(); ?></td>
+                <td><?php echo $estado->getUf(); ?></td>
 
-                <td><a href='show_doenca.php?id=<?php echo $doenca->getCodigo(); ?>'> <img class="icon" src="img/show.png" alt=""> </a></td>
-                <td><a href='cad_doenca.php?acao=editar&codigo=<?php echo $doenca->getCodigo(); ?>'><img class="icon" src="img/edit.png" alt=""></a></td>
-                <td><a href="javascript:excluirRegistro('acao_doenca.php?acao=excluir&codigo=<?php echo $doenca->getCodigo(); ?>')"><img class="icon" src="img/delete.png" alt=""></a></td>
+                <td><a href='show_estado.php?id=<?php echo $estado->getCodigo(); ?>'> <img class="icon" src="img/show.png" alt=""> </a></td>
+                <td><a href='cad_estado.php?acao=editar&codigo=<?php echo $estado->getCodigo(); ?>'><img class="icon" src="img/edit.png" alt=""></a></td>
+                <td><a href="javascript:excluirRegistro('acao_estado.php?acao=excluir&codigo=<?php echo $estado->getCodigo(); ?>')"><img class="icon" src="img/delete.png" alt=""></a></td>
             </tr>
         <?php } ?>
     </table>

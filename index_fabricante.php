@@ -4,7 +4,7 @@ require_once "conf/Conexao.class.php";
 require_once "conf/Crud.class.php";
 require_once "autoload.php";
 //include_once "conf/default.inc.php";
-$title = "Lista de Doenças";
+$title = "Lista de Fabricantes";
 $consulta = isset($_POST['consulta']) ? $_POST['consulta'] : "";
 
 ?>
@@ -24,7 +24,7 @@ $consulta = isset($_POST['consulta']) ? $_POST['consulta'] : "";
 
 <body>
     <br>
-    <a href="cad_doenca.php"><button>Novo</button></a>
+    <a href="cad_fabricante.php"><button>Novo</button></a>
     <br><br>
     <form method="post">
         <input type="text" name="consulta" id="consulta" value="<? echo $consulta; ?>">

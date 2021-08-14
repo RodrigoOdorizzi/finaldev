@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <?php
-include_once "acao.php";
+include_once "acao_doenca.php";
 $acao = isset($_GET['acao']) ? $_GET['acao'] : "";
 $obj;
 if ($acao == 'editar') {
     $codigo = isset($_GET['codigo']) ? $_GET['codigo'] : "";
     if ($codigo > 0)
-        $obj = show_cidade($codigo);
+        $obj = show_doenca($codigo);
 }
 ?>
 <html lang="pt-br">
@@ -26,7 +26,7 @@ if ($acao == 'editar') {
 
 
 
-    <form action="acao.php" method="post">
+    <form action="acao_doenca.php" method="post">
         <input readonly type="text" name="codigo" id="codigo" value="<?php if ($acao == "editar") echo $obj->getCodigo();
                                                                         else echo 0; ?>"><br>
         <input required=true type="text" name="nome" id="nome" value="<?php if ($acao == "editar") echo $obj->getNome(); ?>"><br>

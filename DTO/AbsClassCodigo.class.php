@@ -13,7 +13,7 @@ abstract class AbsClassCodigo{
 	}
 
 	function __toString(){
-		return "Código: ".$this->codigo;
+		return "Codigo: ".$this->codigo;
 	}
 
 	public function buildFromObj($obj){
@@ -26,4 +26,3 @@ abstract class AbsClassCodigo{
     }
 	
 }
-?>

@@ -4,7 +4,7 @@ require_once "conf/Conexao.class.php";
 require_once "conf/Crud.class.php";
 require_once "autoload.php";
 //include_once "conf/default.inc.php";
-$title = "Lista de Doenças";
+$title = "Lista de Enderecos";
 $consulta = isset($_POST['consulta']) ? $_POST['consulta'] : "";
 
 ?>
@@ -24,7 +24,7 @@ $consulta = isset($_POST['consulta']) ? $_POST['consulta'] : "";
 
 <body>
     <br>
-    <a href="cad_doenca.php"><button>Novo</button></a>
+    <a href="cad_endereco.php"><button>Novo</button></a>
     <br><br>
     <form method="post">
         <input type="text" name="consulta" id="consulta" value="<? echo $consulta; ?>">
@@ -35,7 +35,10 @@ $consulta = isset($_POST['consulta']) ? $_POST['consulta'] : "";
     <table border="1">
         <tr>
             <th>Código</th>
-            <th>Nome</th>
+            <th>ID Cidade</th>
+            <th>Rua </th>
+            <th>bairro</th>
+            <th>Número da casa</th>
 
             <th>Detalhes</th>
             <th>Alterar</th>
@@ -43,20 +46,23 @@ $consulta = isset($_POST['consulta']) ? $_POST['consulta'] : "";
         </tr>
         <?php
         $pdo = Conexao::getInstance();
-        $consulta = $pdo->query("SELECT * FROM doenca
-                             WHERE nome
+        $consulta = $pdo->query("SELECT * FROM endereco
+                             WHERE rua
                              LIKE '$consulta%'");
         while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
-            $doenca = new Doenca;
-            $doenca->buildFromArray($linha);
+            $endereco = new Endereco;
+            $endereco->buildFromArray($linha);
         ?>
             <tr>
-                <td><?php echo $doenca->getCodigo(); ?></td>
-                <td><?php echo $doenca->getNome(); ?></td>
+                <td><?php echo  $endereco->getCodigo(); ?></td>
+                <td><?php echo  $endereco->getId_cidade(); ?></td>
+                <td><?php echo  $endereco->getRua(); ?></td>
+                <td><?php echo  $endereco->getBairro(); ?></td>
+                <td><?php echo  $endereco->getNumerocasa(); ?></td>
 
-                <td><a href='show_doenca.php?id=<?php echo $doenca->getCodigo(); ?>'> <img class="icon" src="img/show.png" alt=""> </a></td>
-                <td><a href='cad_doenca.php?acao=editar&codigo=<?php echo $doenca->getCodigo(); ?>'><img class="icon" src="img/edit.png" alt=""></a></td>
-                <td><a href="javascript:excluirRegistro('acao_doenca.php?acao=excluir&codigo=<?php echo $doenca->getCodigo(); ?>')"><img class="icon" src="img/delete.png" alt=""></a></td>
+                <td><a href='show_endereco.php?id=<?php echo  $endereco->getCodigo(); ?>'> <img class="icon" src="img/show.png" alt=""> </a></td>
+                <td><a href='cad_endereco.php?acao=editar&codigo=<?php echo  $endereco->getCodigo(); ?>'><img class="icon" src="img/edit.png" alt=""></a></td>
+                <td><a href="javascript:excluirRegistro('acao_endereco.php?acao=excluir&codigo=<?php echo  $endereco->getCodigo(); ?>')"><img class="icon" src="img/delete.png" alt=""></a></td>
             </tr>
         <?php } ?>
     </table>
