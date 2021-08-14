@@ -43,20 +43,20 @@ $consulta = isset($_POST['consulta']) ? $_POST['consulta'] : "";
         </tr>
         <?php
         $pdo = Conexao::getInstance();
-        $consulta = $pdo->query("SELECT * FROM doenca
+        $consulta = $pdo->query("SELECT * FROM fabricante
                              WHERE nome
                              LIKE '$consulta%'");
         while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
-            $doenca = new Doenca;
-            $doenca->buildFromArray($linha);
+            $fabricante = new Fabricante;
+            $fabricante->buildFromArray($linha);
         ?>
             <tr>
-                <td><?php echo $doenca->getCodigo(); ?></td>
-                <td><?php echo $doenca->getNome(); ?></td>
+                <td><?php echo $fabricante->getCodigo(); ?></td>
+                <td><?php echo $fabricante->getNome(); ?></td>
 
-                <td><a href='show_doenca.php?id=<?php echo $doenca->getCodigo(); ?>'> <img class="icon" src="img/show.png" alt=""> </a></td>
-                <td><a href='cad_doenca.php?acao=editar&codigo=<?php echo $doenca->getCodigo(); ?>'><img class="icon" src="img/edit.png" alt=""></a></td>
-                <td><a href="javascript:excluirRegistro('acao_doenca.php?acao=excluir&codigo=<?php echo $doenca->getCodigo(); ?>')"><img class="icon" src="img/delete.png" alt=""></a></td>
+                <td><a href='show_fabricante.php?id=<?php echo $fabricante->getCodigo(); ?>'> <img class="icon" src="img/show.png" alt=""> </a></td>
+                <td><a href='cad_fabricante.php?acao=editar&codigo=<?php echo $fabricante->getCodigo(); ?>'><img class="icon" src="img/edit.png" alt=""></a></td>
+                <td><a href="javascript:excluirRegistro('acao_fabricante.php?acao=excluir&codigo=<?php echo $fabricante->getCodigo(); ?>')"><img class="icon" src="img/delete.png" alt=""></a></td>
             </tr>
         <?php } ?>
     </table>

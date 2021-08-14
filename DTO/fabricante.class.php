@@ -1,4 +1,7 @@
 <?php
-class fabricante extends AbsClassCodigoNome
+
+require_once "autoload.php";
+
+class Fabricante extends AbsClassCodigoNome
 {
 }
