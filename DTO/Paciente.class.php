@@ -1,24 +1,12 @@
 <?php
-class paciente
+
+require_once "autoload.php";
+class Paciente extends AbsClassCodigo
 {
-    private $codigo;
-    private $Id_usuario;
-    private $Id_pessoa;
 
 
-
-    public function getCodigo()
-    {
-
-        return $this->codigo;
-    }
-
-
-    public function setCodigo($codigo)
-    {
-
-        $this->codigo =  $codigo;
-    }
+    private $id_usuario;
+    private $id_pessoa;
 
 
 
@@ -26,14 +14,14 @@ class paciente
     public function getId_usuario()
     {
 
-        return $this->Id_usuario;
+        return $this->id_usuario;
     }
 
 
-    public function setId_usuario($Id_usuario)
+    public function setId_usuario($id_usuario)
     {
 
-        $this->Id_usuario =  $Id_usuario;
+        $this->id_usuario =  $id_usuario;
     }
 
 
@@ -43,13 +31,33 @@ class paciente
     public function getId_pessoa()
     {
 
-        return $this->Id_pessoa;
+        return $this->id_pessoa;
     }
 
 
-    public function setId_pessoa($Id_pessoa)
+    public function setId_pessoa($id_pessoa)
     {
 
-        $this->Id_pessoa =  $Id_pessoa;
+        $this->id_pessoa =  $id_pessoa;
+    }
+
+
+
+    public function __toString()
+    {
+        return parent::__toString() . " | id usuario: " . $this->id_usuario . " | id pessoa: " . $this->id_pessoa;
+    }
+
+    public function buildFromObj($obj)
+    {
+        $obj = (array)$obj;
+        $this->buildFromArray($obj);
+    }
+
+    public function buildFromArray($arr)
+    {
+        $this->setCodigo($arr['codigo']);
+        $this->setId_usuario($arr['id_usuario']);
+        $this->setId_pessoa($arr['id_pessoa']);
     }
 }

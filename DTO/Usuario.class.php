@@ -2,6 +2,6 @@
 
 require_once "autoload.php";
 
-class Usuario extends AbsClassCodigoDescricao{
-
+class Usuario extends AbsClassCodigoDescricaoNome
+{
 }
