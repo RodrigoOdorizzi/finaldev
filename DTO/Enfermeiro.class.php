@@ -8,7 +8,6 @@ class Enfermeiro extends AbsClassCodigo
 
 
     private $id_pessoa;
-
     private $id_user;
 
 
@@ -50,7 +49,7 @@ class Enfermeiro extends AbsClassCodigo
     public function buildFromArray($arr)
     {
         $this->setCodigo($arr['codigo']);
-        $this->setId_Pessoa($arr['id_pessoa']);
-        $this->setId_User($arr['id_user']);
+        $this->setId_pessoa($arr['id_pessoa']);
+        $this->setId_user($arr['id_user']);
     }
 }

@@ -29,7 +29,7 @@ if ($acao == 'editar') {
     <form action="acao_endereco.php" method="post">
         <input readonly type="text" name="codigo" id="codigo" value="<?php if ($acao == "editar") echo $obj->getCodigo();
                                                                         else echo 0; ?>"><br>
-        <input required=true type="text" name="id_cidade" id="nome" value="<?php if ($acao == "editar") echo $obj->getId_cidade(); ?>"><br>
+        <input required=true type="text" name="id_cidade" id="id_cidade" value="<?php if ($acao == "editar") echo $obj->getId_cidade(); ?>"><br>
         <input required=true type="text" name="rua" id="rua" value="<?php if ($acao == "editar") echo $obj->getRua(); ?>"><br>
         <input required=true type="text" name="bairro" id="bairro" value="<?php if ($acao == "editar") echo $obj->getBairro(); ?>"><br>
         <input required=true type="text" name="numerocasa" id="numerocasa" value="<?php if ($acao == "editar") echo $obj->getNumerocasa(); ?>"><br>

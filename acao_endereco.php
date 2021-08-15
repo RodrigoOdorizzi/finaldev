@@ -40,7 +40,7 @@ function inserir_endereco($codigo)
 
     // Inseri os dados do usuário
 
-    $arrayEndereco = array('Id cidade' => $endereco->getId_cidade(), 'Rua' => $endereco->getRua(), 'Bairro' => $endereco->getBairro(), 'Numero_casa' => $endereco->getNumerocasa());
+    $arrayEndereco = array('id_cidade' => $endereco->getId_cidade(), 'rua' => $endereco->getRua(), 'bairro' => $endereco->getBairro(), 'numerocasa' => $endereco->getNumerocasa());
     $retorno   = $crud->insert($arrayEndereco);
 
     header("location:cad_endereco.php");
@@ -51,9 +51,9 @@ function editar_endereco($codigo)
 {
     $pdo = Conexao::getInstance();
     $crud = Crud::getInstance($pdo, 'endereco');
-    $endereco = DadosForm_endereco();
+    $endereco = dadosForm_endereco();
 
-    $arrayEndereco = array('Id cidade' => $endereco->getId_cidade(), 'Rua' => $endereco->getRua(), 'Bairro' => $endereco->getBairro(), 'Numero_casa' => $endereco->getNumerocasa());
+    $arrayEndereco = array('id_cidade' => $endereco->getId_cidade(), 'rua' => $endereco->getRua(), 'bairro' => $endereco->getBairro(), 'numerocasa' => $endereco->getNumerocasa());
     $arrayCond = array('codigo=' => $codigo);
     $retorno   = $crud->update($arrayEndereco, $arrayCond);
     header("location:index_endereco.php");
@@ -68,6 +68,7 @@ function excluir_endereco($codigo)
     $retorno   = $crud->delete($arrayCond);
     header("location:index_endereco.php");
 }
+
 
 function show_endereco($id)
 {
@@ -87,8 +88,8 @@ function show_endereco($id)
 
 
 
-// Busca as informações digitadas no form
 
+// Busca as informações digitadas no form
 
 function dadosForm_endereco()
 {
@@ -97,10 +98,9 @@ function dadosForm_endereco()
     $dados['codigo'] = $_POST['codigo'];
     $dados['id_cidade'] = $_POST['id_cidade'];
     $dados['rua'] = $_POST['rua'];
+
     $dados['bairro'] = $_POST['bairro'];
     $dados['numerocasa'] = $_POST['numerocasa'];
-
-
     $endereco->buildFromArray($dados);
     return $endereco;
 }

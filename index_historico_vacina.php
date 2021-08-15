@@ -4,7 +4,7 @@ require_once "conf/Conexao.class.php";
 require_once "conf/Crud.class.php";
 require_once "autoload.php";
 //include_once "conf/default.inc.php";
-$title = "Lista de Doenças";
+$title = "Lista de Historico";
 $consulta = isset($_POST['consulta']) ? $_POST['consulta'] : "";
 
 ?>

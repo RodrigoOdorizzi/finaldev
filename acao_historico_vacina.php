@@ -99,9 +99,6 @@ function dadosForm_historico_vacina()
     $dados['data'] = $_POST['data'];
 
     $dados['id_paciente'] = $_POST['id_paciente'];
-
-
-
     $dados['id_enfermeiro'] = $_POST['id_enfermeiro'];
     $dados['id_vacina'] = $_POST['id_vacina'];
 

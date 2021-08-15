@@ -97,7 +97,7 @@ function dadosForm_enfermeiro()
     $dados = array();
     $dados['codigo'] = $_POST['codigo'];
     $dados['id_pessoa'] = $_POST['id_pessoa'];
-    $dados['id_User'] = $_POST['id_User'];
+    $dados['id_user'] = $_POST['id_user'];
     $enfermeiro->buildFromArray($dados);
     return $enfermeiro;
 }
