@@ -148,7 +148,7 @@ if ($acao == 'editar') {
 
                         <form action="acao_fabricante.php" method="post">
                             <input readonly type="text" class="form-control" placeholder="Código não editável" name="codigo" id="codigo" value="<?php if ($acao == "editar") echo $obj->getCodigo();
-                                                                                                                                                ?>"><br>
+                                                                                                                                                else echo 0    ?>"><br>
                             <input required=true type="text" class="form-control" placeholder="Nome da Vacina" name="nome" id="nome" value="<?php if ($acao == "editar") echo $obj->getNome(); ?>"><br>
 
                             <br><button class="btn btn-sm btn-secondary" type="submit" name="acao" id="acao" value="salvar">Salvar</button>

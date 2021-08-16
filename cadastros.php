@@ -71,12 +71,10 @@ require_once "autoload.php";
 
 
                 <div class="col-md-4 mb-5 wow fadeInUp" data-wow-delay=".5s"><i class="fa fa-cubes fa-3x red-text"></i>
-                    <a href="index_2.php">
-                        <h3 class="h4 mt-3">Execution</h3>
+                    <a href="index_cidade.php">
+                        <h3 class="h4 mt-3">Cidades</h3>
                         <p class="mt-3 blue-grey-text">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam minima
-                            assumenda deleniti
-                            hic.
+                            Cidades cadastradas
                         </p>
                     </a>
                 </div>
