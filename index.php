@@ -4,7 +4,14 @@ require_once "conf/Conexao.class.php";
 require_once "conf/Crud.class.php";
 require_once "autoload.php";
 
+
+
 //include_once "conf/default.inc.php";
+
+$consulta = isset($_POST['consulta']) ? $_POST['consulta'] : "";
+
+
+
 ?>
 <html lang="pt-br">
 
@@ -20,31 +27,28 @@ require_once "autoload.php";
     <link href="css/mdb.min.css?ver=1.1.0" rel="stylesheet">
     <link href="css/main.css?ver=1.1.0" rel="stylesheet">
 
+
+    <script>
+        function excluirRegistro(url) {
+            if (confirm("Confirmar Exclusão?"))
+                location.href = url;
+        }
+    </script>
+
 </head>
 
+
+
 <body id="top">
-    <header>
-        <!-- Navbar-->
-        <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar" id="navbar">
-            <div class="container"><a class="navbar-brand" href="#"><strong>Sistema de Vacinação</strong></a>
-                <?php include 'menu.php'; ?>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarContent">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item"><a class="nav-link active" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-                    </ul><a class="btn btn-primary btn-rounded my-0" href="acaoLogin.php?acao=logoff" target=" _blank">Sair</a>
-                </div>
-            </div>
-        </nav>
+
+    <?php include 'header.php' ?>
+
+    <div id="content">
 
 
         <!-- Intro Section-->
 
-        <!--
+
         <section class="view hm-gradient" id="intro">
             <div class="site-bg-img d-flex align-items-center">
                 <div class="container">
@@ -52,26 +56,24 @@ require_once "autoload.php";
                         <div class="col-md-10 col-lg-6 text-center text-md-left margins">
                             <div class="white-text">
                                 <div class="wow fadeInLeft" data-wow-delay="0.3s">
-                                    <h1 class="h1-responsive font-weight-bold mt-sm-5">Your Success is Our Mission.</h1>
+                                    <h1 class="h1-responsive font-weight-bold mt-sm-5">Seu sistema de vacinação.</h1>
                                     <div class="h6">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem repellendus quasi fuga nesciunt
-                                        dolorum nulla magnam veniam sapiente, fugiat! Commodi sequi non animi ea dolor molestiae
-                                        iste.
+                                        Aqui você encontra informações sobre as vacinações
                                     </div>
                                 </div><br>
+                                <!-- opção para adicionar botões
                                 <div class="wow fadeInLeft" data-wow-delay="0.3s"><a class="btn btn-white dark-grey-text font-weight-bold ml-0" href="https://www.youtube.com/watch?v=60ItHLz5WEA" target="_blank"><i class="fa fa-play mr-1"></i>
                                         View Demo</a><a class="btn btn-outline-white" href="#">Learn more</a></div>
+                            </div> -->
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
         </section>
 
--->
 
-    </header>
-    <div id="content">
+
+        <!-- section default -->
         <section class="row no-gutters" id="features">
             <div class="col-lg-3 col-md-6 col-sm-12 deep-purple lighten-1 text-white">
                 <div class="p-5 text-center wow zoomIn" data-wow-delay=".1s"><i class="fa fa-line-chart fa-2x"></i>
@@ -103,7 +105,14 @@ require_once "autoload.php";
 
 
 
-        <?php include 'index2.php' ?>
+        <?php
+
+
+        include 'index2.php'
+
+        ?>
+
+
         <?php include 'index3.php' ?>
 
 
@@ -318,20 +327,11 @@ require_once "autoload.php";
             </div>
         </section>
     </div>
-    <footer class="page-footer indigo darken-2 center-on-small-only pt-0 mt-0">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="mb-5 flex-center"><a class="px-3" href="#"><i class="fa fa-facebook fa-lg white-text"></i></a><a class="px-3" href="#"><i class="fa fa-twitter fa-lg white-text"></i></a><a class="px-3" href="#"><i class="fa fa-google-plus fa-lg white-text"></i></a><a class="px-3" href="#"><i class="fa fa-linkedin fa-lg white-text"></i></a></div>
-                </div>
-            </div>
-        </div>
-        <div class="footer-copyright text-center py-3 font-small">
-            <div class="container-fluid">
-                <div>&copy; <a href="undefined/">Material Landing</a> - Design: <a href="https://templateflip.com/" target="_blank">TemplateFlip</a></div>
-            </div>
-        </div>
-    </footer>
+
+
+    <?php include 'footer.php' ?>
+
+
     <script type="text/javascript" src="scripts/jquery.min.js?ver=1.1.0"></script>
     <script type="text/javascript" src="scripts/popper.min.js?ver=1.1.0"></script>
     <script type="text/javascript" src="scripts/bootstrap.min.js?ver=1.1.0"></script>
