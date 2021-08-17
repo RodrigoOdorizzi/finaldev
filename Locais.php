@@ -33,12 +33,12 @@ require_once "autoload.php";
     <section class="text-center py-5 grey lighten-4" id="about">
         <div class="container">
             <div class="wow fadeIn">
-                <h2 class="h1 pt-5 pb-3">Cadastros</h2>
+                <h2 class="h1 pt-5 pb-3">Locais</h2>
 
                 <div class="wow fadeIn mt-5">
 
                     <p class="px-5 pb-3 lead blue-grey-text">
-                        Você está em: <a href="index.php">Index </a> -> <a href="Cadastros.php"> Cadastros </a>
+                        Você está em: <a href="index.php">Index </a> -> <a href="Locais.php"> Locais</a>
                     </p>
 
                 </div>
@@ -46,31 +46,31 @@ require_once "autoload.php";
             <div class="row">
 
 
-                <div class="col-md-4 mb-5 wow fadeInUp   data-wow-delay=" .3s"><i class="fa fa-heartbeat fa-3x green-text"></i>
-                    <a href="index_fabricante.php">
-                        <h3 class="h4 mt-3">Laboratórios</h3>
+                <div class="col-md-4 mb-5 wow fadeInUp   data-wow-delay=" .3s"><i class="fa fa-circle-o-notch fa-3x green-text"></i>
+                    <a href="index_cidade.php">
+                        <h3 class="h4 mt-3">Cidades</h3>
                         <p class="mt-3 blue-grey-text">
-                            Lista dos laboratórios cadastrados no sistema.
+                            Lista das cidades cadastrados no sistema.
                         </p>
                     </a>
                 </div>
 
 
-                <div class="col-md-4 mb-5 wow fadeInUp" data-wow-delay=".4s"><i class="fa fa-asterisk fa-3x cyan-text"></i>
-                    <a href="index_doenca.php">
-                        <h3 class="h4 mt-3">Doencas</h3>
+                <div class="col-md-4 mb-5 wow fadeInUp" data-wow-delay=".4s"><i class="fa fa-circle-o-notch fa-3x cyan-text"></i>
+                    <a href="index_estado.php">
+                        <h3 class="h4 mt-3">Estados</h3>
                         <p class="mt-3 blue-grey-text">
-                            Lista das doenças cadastrados no sistema.
+                            Lista dos estados cadastrados no sistema.
                         </p>
                     </a>
                 </div>
 
 
-                <div class="col-md-4 mb-5 wow fadeInUp" data-wow-delay=".5s"><i class="fa fa-cubes fa-3x red-text"></i>
-                    <a href="index_vacina.php">
-                        <h3 class="h4 mt-3">vacinas</h3>
+                <div class="col-md-4 mb-5 wow fadeInUp" data-wow-delay=".5s"><i class="fa fa-circle-o-notch fa-3x red-text"></i>
+                    <a href="index_endereco.php">
+                        <h3 class="h4 mt-3">Endereços</h3>
                         <p class="mt-3 blue-grey-text">
-                            Vacinas cadastradas
+                            Endereços cadastradas
                         </p>
                     </a>
                 </div>
@@ -83,14 +83,6 @@ require_once "autoload.php";
             <div class="row col-lg-12" style="margin: auto;">
 
 
-                <div class="col-md-4 mb-5 wow fadeInUp   data-wow-delay=" .3s"><i class="fa fa-book fa-3x green-text"></i>
-                    <a href="index_historico_vacina.php">
-                        <h3 class="h4 mt-3">Histórico de vacinas</h3>
-                        <p class="mt-3 blue-grey-text">
-                            Aqui você encontra a lista do histórico vacinas aplicadas no sistema.
-                        </p>
-                    </a>
-                </div>
 
 
             </div>
